@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/dinsysconnect/db" VERSION="20120521" COMMENT="XMLDB file for Moodle mod/dinsysconnect"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="dinsysconnect" COMMENT="Stores instances of dinsysconnect">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" PREVIOUS="id" NEXT="pwd"/>
+        <FIELD NAME="pwd" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" PREVIOUS="name" NEXT="intro"/>
+        <FIELD NAME="intro" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" PREVIOUS="pwd" NEXT="course"/>
+        <FIELD NAME="course" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" PREVIOUS="intro" NEXT="portno"/>
+        <FIELD NAME="portno" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="course" NEXT="processid"/>
+        <FIELD NAME="processid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="portno" NEXT="connectivity"/>
+        <FIELD NAME="connectivity" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" PREVIOUS="processid"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
